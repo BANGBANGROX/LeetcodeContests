@@ -99,7 +99,7 @@ class Solution {
             final long bestPrevHigh = upTree.query(currRank + 1, runningRank - 1);
 
             dpUp[i] = bestPrevLow + nums[i];
-            dpDown[i] = bestPrevHigh > 0 ? bestPrevHigh + nums[i] : 0;
+            dpDown[i] = bestPrevHigh + nums[i];
 
             answer = Math.max(answer, Math.max(dpUp[i], dpDown[i]));
         }
